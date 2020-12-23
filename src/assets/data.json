@@ -1,0 +1,51 @@
+{
+  "settings": {
+    "id": 14222,
+    "insight_token": null,
+    "inspection_token": "558c7e73e929fe1d76c48677aa8b3dc0",
+    "name": null,
+    "site_id": 11742,
+    "time_zone": "Copenhagen",
+    "token": "558c7e73e929fe1d76c48677aa8b3dc0",
+    "separate_fetch_send": false,
+    "use_folder_id": false,
+    "sync_dialog": false,
+    "enable_left_menu": false,
+    "sync_delay_enabled": false,
+    "sync_default_delay": 10,
+    "sync_delay_pr_schedule": 2
+  },
+  "servers": {
+    "maintenance": [
+      {
+        "address": "https://endpoint.somedomain.com",
+        "priority": "0"
+      }
+    ]
+  },
+  "site": {
+    "address_line1": null,
+    "address_line2": null,
+    "city": null,
+    "country": null,
+    "created_at": "2019-11-28T13:04:43Z",
+    "id": 11742,
+    "name": "Tester 1",
+    "notes": null,
+    "organization_id": 917,
+    "phone": null,
+    "postal_code": null,
+    "time_zone": "Copenhagen",
+    "updated_at": "2019-11-28T13:04:43Z",
+    "version": 1,
+    "workflow_state": "active"
+  },
+  "workers": [
+    {
+      "first_name": "Tester",
+      "id": 9742,
+      "last_name": "1",
+      "password": null
+    }
+  ]
+}

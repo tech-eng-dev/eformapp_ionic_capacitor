@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Picture(s)</ion-title>
+    <ion-buttons slot="end" (click)="takePicture()">
+      <ion-icon slot="icon-only" name="camera"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <div *ngFor="let photo of apiService.photos">
+      <ion-card>
+        <ion-toolbar> 
+          <ion-buttons slot="primary">
+            <ion-button (click)="presentPopover($event, photo.name)">
+              <ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+          <div>{{ photo.name }}</div>
+        </ion-toolbar>
+        <img [src]="photo?.data" />
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

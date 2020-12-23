@@ -1,0 +1,8 @@
+{
+  "name": "Microting",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

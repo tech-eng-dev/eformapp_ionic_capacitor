@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>eForm</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item lines="full">
+    <ion-label>
+      {{apiService.apiData?.site?.name}}
+    </ion-label>
+    <ion-icon name="arrow-forward" slot="end"></ion-icon>
+  </ion-item>
+  <ion-item lines="full" (click)="goPhotosPage()">
+    <ion-label>
+      Picture(s) of irregularity/condition
+    </ion-label>
+    <ion-icon name="camera" slot="end"></ion-icon>
+    <ion-badge slot="end" color="secondary">{{ photoCount}}</ion-badge>
+  </ion-item>
+  <ion-item lines="full" (click)="goAudioPage()">
+    <ion-label>
+      Speak: Operation Impact
+    </ion-label>
+    <ion-icon name="mic" slot="end"></ion-icon>
+    <ion-badge slot="end" color="secondary">{{ audioCount }}</ion-badge>
+  </ion-item>
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <button type="button" mdbBtn color="light" block="true" mdbWavesEffect>Sync</button>
+  </ion-toolbar>
+</ion-footer>

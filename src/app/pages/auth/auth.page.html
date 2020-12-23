@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>Microting eForm</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">Customer Number</ion-label>
+    <ion-input name="customer-num" [(ngModel)]="customer_num"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">One Time Code</ion-label>
+    <ion-input name="opt-code" [(ngModel)]="opt_code"></ion-input>
+  </ion-item>
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <button mdbBtn id="auth-btn" type="button" gradient="aqua" block="true" mdbWavesEffect [disabled]="!customer_num || !opt_code" (click)="authorize()">Authorize</button>
+  </ion-toolbar>
+</ion-footer>

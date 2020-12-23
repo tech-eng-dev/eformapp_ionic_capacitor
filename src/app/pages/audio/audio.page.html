@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Audio(s)</ion-title>
+    <ion-buttons slot="end" (click)="takeAudio()">
+      <ion-icon slot="icon-only" name="mic"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <div *ngFor="let audio of apiService.audioFiles">
+      <ion-card>
+        <ion-toolbar> 
+          <ion-buttons slot="primary">
+            <ion-button (click)="presentPopover($event, audio.name)">
+              <ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+          <ion-icon name="musical-notes" slot="start"></ion-icon>
+          <div (click)="play(audio)" [style.color]="audio.name == curAudioName ? 'red': ''">
+            <div>&nbsp;&nbsp;&nbsp;{{ audio.name }}</div>
+            <div>&nbsp;&nbsp;&nbsp;Varighed: {{ audio.duration }}</div>
+          </div>
+        </ion-toolbar>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <audio controls autoplay #myAudio style="width: 100%;"></audio>
+  </ion-toolbar>
+</ion-footer>

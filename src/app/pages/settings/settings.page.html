@@ -1,0 +1,84 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-divider>
+      <ion-label color="secondary">Device info</ion-label>
+    </ion-item-divider>
+    <ion-item lines="full">
+      <ion-label color="secondary">Site id:</ion-label>
+      <div>{{apiService.apiData?.site?.id}}</div>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label color="secondary">Site name:</ion-label>
+      <div>{{apiService.apiData?.site?.name}}</div>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label>
+        <ion-text color="secondary">Token:</ion-text>
+        <ion-text>
+          <div>{{apiService.apiData?.settings?.token}}</div>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label color="secondary">Unit id:</ion-label>
+      <div>{{apiService.apiData?.settings?.id}}</div>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label color="secondary">Model:</ion-label>
+      <div>{{deviceInfo?.model}}</div>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label color="secondary">Platform:</ion-label>
+      <div>{{deviceInfo?.platform}}</div>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label color="secondary">OS version:</ion-label>
+      <div>{{deviceInfo?.osVersion}}</div>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label color="secondary">Software build:</ion-label>
+      <div>{{deviceInfo?.appBuild}}</div>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label color="secondary">Software version:</ion-label>
+      <div>{{deviceInfo?.appVersion}}</div>
+    </ion-item>
+    <ion-item-divider>
+      <ion-label color="secondary">Settings</ion-label>
+    </ion-item-divider>
+    <ion-item lines="full">
+      <ion-label color="secondary">Vibrate:</ion-label>
+      <ion-toggle [(ngModel)]="vibrate" (ionChange)="setSettings()"></ion-toggle>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label color="secondary">Max image quality:</ion-label>
+      <ion-toggle [(ngModel)]="maxImgQuality" (ionChange)="setSettings()"></ion-toggle>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label color="secondary">Auto geotag:</ion-label>
+      <ion-toggle [(ngModel)]="autoGeoTag" (ionChange)="setSettings()"></ion-toggle>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label color="secondary">Show schedule id's:</ion-label>
+      <ion-toggle [(ngModel)]="scheduleIds" (ionChange)="setSettings()"></ion-toggle>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label color="secondary">Dark Mode:</ion-label>
+      <ion-toggle [(ngModel)]="darkMode" (ionChange)="setSettings()"></ion-toggle>
+    </ion-item>
+    <ion-item-divider>
+      <ion-label color="secondary">Actions</ion-label>
+    </ion-item-divider>
+    <button type="button" mdbBtn color="light" block="true" mdbWavesEffect>Clear database</button>
+    <button type="button" mdbBtn color="light" block="true" (click)="clearToken()" id="clear-token-btn" mdbWavesEffect>Clear Token</button>
+  </ion-list>
+</ion-content>
